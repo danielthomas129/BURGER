@@ -1,16 +1,18 @@
 // Set up MySQL connection.
 const mysql = require("mysql");
 const connection;
+const JAWSDB_string = "mysql://uokyn4b6ncq83xk2:xtv6rw9ufobbz9l1@lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zbzml6pe5m4qz5lq"
+// if (process.env.JAWSDB_URL) {
 
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
+if (JAWSDB_string) {
+  connection = mysql.createConnection(JAWSDB_string);
 } else {
   connection = mysql.createConnection({
-    host: "localhost",
+    host: "lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     port: 3306,
-    user: "root",
-    password: "Password12",
-    database: "burgers_db"
+    user: "uokyn4b6ncq83xk2",
+    password: "xtv6rw9ufobbz9l1",
+    database: "zbzml6pe5m4qz5lq"
   });
 }
 
