@@ -1,7 +1,7 @@
 const express = require('express');
-const connection = require("./config/connection.js");
-const config = require("./config/config.json")
-const server = require("./server.js")
+// const connection = require("./config/connection.js");
+// const config = require("./config/config.json")
+// const server = require("./server.js");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
