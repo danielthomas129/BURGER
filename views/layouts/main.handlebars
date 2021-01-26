@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Munch A Burger!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        body {
+            background-color: gold;
+        }
+
+        ul {
+            list-style-type: none;
+            border: solid 3px gold;
+            border-radius: 1rem;
+            background-color: lightgreen;
+            padding: 10px 0 10px 30px;
+            box-shadow: 0 0 10px grey;
+        }
+
+        li {
+            padding: .1rem .5rem .1rem 0;
+        }
+
+        main {
+            margin: 30px 0 30px 0;
+            padding: 30px;
+            background-color: goldenrod;
+            box-shadow: 0 0 10px grey;
+        }
+
+        .form-control, .form-control:focus {
+            background-color: chocolate;
+            color: white;
+            border: darkgoldenrod;
+        }
+
+        .form-control::placeholder {
+            color: cornsilk;
+        }
+
+        .btn-danger {
+            padding: .1rem .75rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    {{{ body }}}
+    <script>
+        $(function () {
+            $(".create-form").on("submit", function (event) {
+                // Make sure to preventDefault on a submit event.
+                event.preventDefault();
+
+                var newBurg = {
+                    name: $("#burg").val().trim(),
+                };
+
+                $.ajax("/api/burgers", {
+                    type: "POST",
+                    data: newBurg
+                }).then(() => {
+                    console.log("Order up!");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+                );
+            })
+            $(".eatBtn").on("click", function (event) {
+                console.log(this.id);
+                let munchedState = {
+                    munched: "true"
+                };
+
+                $.ajax(`/api/burgers/${this.id}`, {
+                    type: "PUT",
+                    data: munchedState
+                }).then(() => {
+                    console.log("Enjoy!");
+                    location.reload();
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>

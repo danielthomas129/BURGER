@@ -1,0 +1,47 @@
+<main class="container">
+    <div class="d-flex justify-content-center">
+        <a href="https://www.vecteezy.com/" target="_blank"><img src="burg.png" alt="Vectors by Vecteezy" style="max-height: 300px;"></a>
+    </div>
+
+    <h1>Munch Burger!</h1>
+    <div class="row d-flex">
+        <div class="col">
+            <h2>Burgers Ready Ta Eat!</h2>
+
+            <ul>
+                {{#each burger}}
+                {{#unless munched}}
+                <li>
+                    <button class="eatBtn btn btn-danger" id="{{id}}">Munch It!</button>
+                    {{burger_name}}
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col">
+            <h2>Burgers Munched!</h2>
+
+            <ul>
+                {{#each burger}}
+                {{#if munched}}
+                <li>
+                    {{burger_name}}
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>Add Da Burger</h2>
+        <form class="create-form">
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="burg" name="name" placeholder="Burger Name">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Burger</button>
+        </form>
+    </div>
+</main>
