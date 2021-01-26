@@ -1,5 +1,6 @@
 // Import MySQL connection.
-const connection = require("../config/connection.js");
+const connection = require("./config/connection.js");
+const config = require("./config.json")
 
 const orm = {
     selectAll: (table, cb) => {

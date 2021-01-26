@@ -1,30 +1,22 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
+// Import the ORM to create functions that will interact with the database.
+const orm = require("../config/orm.js");
 
-// Dependencies
-// =============================================================
-var path = require("path");
-
-// Routes
-// =============================================================
-module.exports = function(app) {
-
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-
-  // index route loads view.html
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
-  });
-
-  // Route to the cms page
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
-  });
-
-  // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
-  });
-
+const burger = {
+    selectAll: function (cb) {
+        orm.selectAll("burgers", function (res) {
+            cb(res);
+        });
+    },
+    insertOne: function (vals, cb) {
+        orm.insertOne("burgers", "burger_name", vals, function (res) {
+            cb(res);
+        });
+    },
+    updateOne: function (colNewVal, condition, cb) {
+        orm.updateOne("burgers", colNewVal, condition, function (res) {
+            cb(res);
+        });
+    }
 };
+
+module.exports = burger;
