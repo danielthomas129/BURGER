@@ -1,12 +1,12 @@
 // Set up MySQL connection.
-var mysql = require("mysql");
-var connection;
-// const config = require("../config/config.json");
-// const server = require("../server.js");
-const JAWSDB_URL = "mysql://uokyn4b6ncq83xk2:xtv6rw9ufobbz9l1@lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zbzml6pe5m4qz5lq"
+const mysql = require("mysql");
+//const connection;
+const config = require("./config.json");
+const server = require("../server.js");
+// const JAWSDB_URL = "mysql://uokyn4b6ncq83xk2:xtv6rw9ufobbz9l1@lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zbzml6pe5m4qz5lq"
 
-if (JAWSDB_URL) {
-  connection = mysql.createConnection(JAWSDB_URL);
+ if (process.env.JAWSDB_URL) {
+   connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 } else {
   connection = mysql.createConnection({
@@ -28,5 +28,5 @@ connection.connect(function (err) {
 });
 
 // Export connection for our ORM to use.
-connection.connect();
+
 module.exports = connection;
