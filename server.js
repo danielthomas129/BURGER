@@ -26,7 +26,7 @@ app.use(timeout(15000));
 app.use(haltOnTimedout);
 
 function haltOnTimedout(req, res, next) {
-  if(!req.timeout) next();
+  if(!req.timedout) next();
 }
 
 app.listen(PORT, function() {
