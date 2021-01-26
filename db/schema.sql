@@ -8,5 +8,5 @@ CREATE TABLE burgers (
     id INT auto_increment PRIMARY KEY,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     burger_name VARCHAR(30) NOT NULL,
-    devoured BOOLEAN default false
+    munched BOOLEAN default false
 );
