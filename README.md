@@ -8,11 +8,12 @@ Users can input names of burgers to the app, which will be prepared and ready to
 
 The following animation demonstrates the application functionality:
 
-![Database Schema](Assets/Employee-Tracker-MySql-App.gif)
-![Database Schema](Assets/ALLEMP.png)
+![Database Schema](public/mab.gif)
+![Database Schema](public/mb1.png)
+
 ## CLICK THE ICON BELOW: VIDEO DEMO LINK
 
-[![VIDEO LINK]](https://drive.google.com/file/d/1f50F8O-9k8NITC6kPzom6TUnwOE2Ib5k/view)
+[![VIDEO LINK]](https://drive.google.com/file/d/1dvua9f7YkLmJ_gH_527-OUlMu561k9M4/view)
 
 ## INSTALLATION
 
@@ -48,8 +49,8 @@ All the recommended files and directories from the steps above should look like 
 │
 ├── public
 │   ├── burger3.png
-│   └── seeds.sql
-│           
+│   └── mb1.png
+│   └── mab.gif
 ├── .env
 ├── .gitignore
 ├── README.md
@@ -65,7 +66,7 @@ All the recommended files and directories from the steps above should look like 
 *[Github-Repository](https://github.com/danielthomas129/BURGER)
 *HEROKU: [DASHBOARD](https://dashboard.heroku.com/apps/burger-much)
 *HEROKU: [DEPLOYED-APP](https://burger-much.herokuapp.com/)
-
+[Updated Portfolio](https://danielthomas129.github.io/DTG-Portfolio-2021/)
 - - -
 
 ### Daniel Thomas Guadalupe
