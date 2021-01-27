@@ -4,6 +4,7 @@ const mysql = require("mysql");
 const config = require("./config.json");
 const server = require("../server.js");
 // const JAWSDB_URL = "mysql://uokyn4b6ncq83xk2:xtv6rw9ufobbz9l1@lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zbzml6pe5m4qz5lq"
+let connection;
 
  if (process.env.JAWSDB_URL) {
    connection = mysql.createConnection(process.env.JAWSDB_URL);
